@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.wolox.wchallenge.model.Album;
+import com.wolox.wchallenge.model.Comment;
 import com.wolox.wchallenge.model.Photo;
 import com.wolox.wchallenge.model.User;
 import com.wolox.wchallenge.service.WChallengeService;
@@ -18,6 +19,8 @@ public class WChallengeServiceImpl implements WChallengeService {
 	public static final String USERS = "/users";
 	public static final String PHOTOS = "/photos";
 	public static final String ALBUMS = "/albums";
+	public static final String COMMENTS = "/comments";
+	public static final String NAME = "name";
 	public static final String USER_ID = "userId";
 	public static final String ID = "id";
 	
@@ -72,6 +75,14 @@ public class WChallengeServiceImpl implements WChallengeService {
 		Album[] albums = restTemplate.getForObject(host+ALBUMS+"?"+USER_ID+"="+userId, Album[].class);
 		
 		return Arrays.asList(albums);
+	}
+
+	@Override
+	public List<Comment> getCommentsByName(String name) {
+		
+		Comment[] comments = restTemplate.getForObject(host+COMMENTS+"?"+NAME+"="+name, Comment[].class);
+		
+		return Arrays.asList(comments);
 	}
 
 }

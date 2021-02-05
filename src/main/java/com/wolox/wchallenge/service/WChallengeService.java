@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.wolox.wchallenge.model.Album;
+import com.wolox.wchallenge.model.Comment;
 import com.wolox.wchallenge.model.Photo;
 import com.wolox.wchallenge.model.User;
 
@@ -23,5 +24,6 @@ public interface WChallengeService {
 	
 	public List<Album> getAlbumByUser(long userId);
 	
+	public List<Comment> getCommentsByName(String name);
 
 }
