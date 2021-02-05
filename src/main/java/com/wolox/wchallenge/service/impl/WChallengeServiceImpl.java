@@ -19,6 +19,7 @@ public class WChallengeServiceImpl implements WChallengeService {
 	public static final String PHOTOS = "/photos";
 	public static final String ALBUMS = "/albums";
 	public static final String USER_ID = "userId";
+	public static final String ID = "id";
 	
 	@Value("${JsonPlaceHolder.host}")
 	private String host;
@@ -31,6 +32,14 @@ public class WChallengeServiceImpl implements WChallengeService {
 		User[] users = restTemplate.getForObject(host+USERS, User[].class);
 		
 		return Arrays.asList(users);
+	}
+	
+	@Override
+	public User getUserById(long userId) {
+		
+		User[] userData = restTemplate.getForObject(host+USERS+"?"+ID+"="+userId, User[].class);
+		
+		return Arrays.asList(userData).get(0);
 	}
 
 	@Override

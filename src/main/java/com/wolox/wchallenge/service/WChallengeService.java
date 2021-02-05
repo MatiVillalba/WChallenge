@@ -13,6 +13,8 @@ public interface WChallengeService {
 	
 	public List<User> getAllUsers();
 	
+	public User getUserById(long userId);
+	
 	public List<Photo> getAllPhotos();
 	
 	public List<Photo> getPhotosByUser(long userId);

@@ -3,15 +3,18 @@ package com.wolox.wchallenge.controllers;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wolox.wchallenge.dto.PatchUserAlbumRolDTO;
 import com.wolox.wchallenge.dto.UserAlbumDTO;
+import com.wolox.wchallenge.model.User;
 import com.wolox.wchallenge.model.UserAlbum;
 
 @RestController
@@ -24,5 +27,9 @@ public interface UserAlbumController {
 	@PatchMapping("/albums/{albumId}")
 	public ResponseEntity<List<UserAlbum>> patchUserAlbumRole(@PathVariable("albumId") long albumId, 
 			@RequestBody PatchUserAlbumRolDTO patchUserAlbumRolDTO);
+	
+	@GetMapping("/albums/{albumId}")
+	public ResponseEntity<List<User>> getAllUsersByAlbumAndRole(@PathVariable("albumId") long albumId,
+			@RequestParam(name = "role", required = false) Boolean role);
 	
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.wolox.wchallenge.controllers.UserAlbumController;
 import com.wolox.wchallenge.dto.PatchUserAlbumRolDTO;
 import com.wolox.wchallenge.dto.UserAlbumDTO;
+import com.wolox.wchallenge.model.User;
 import com.wolox.wchallenge.model.UserAlbum;
 import com.wolox.wchallenge.service.UserAlbumService;
 
@@ -29,6 +30,12 @@ public class UserAlbumControllerImpl implements UserAlbumController {
 	public ResponseEntity<List<UserAlbum>> patchUserAlbumRole(long albumId, PatchUserAlbumRolDTO patchUserAlbumRolDTO) {
 		
 		return new ResponseEntity<> (userAlbumService.patchUserAlbumRole(albumId, patchUserAlbumRolDTO), HttpStatus.OK);
+	}
+
+	@Override
+	public ResponseEntity<List<User>> getAllUsersByAlbumAndRole(long albumId, Boolean role) {
+	
+		return new ResponseEntity<> (userAlbumService.getAllUsersByAlbumAndRole(albumId, role), HttpStatus.OK);
 	}
 
 }
