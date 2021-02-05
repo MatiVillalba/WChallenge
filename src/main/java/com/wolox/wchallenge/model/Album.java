@@ -1,5 +1,6 @@
 package com.wolox.wchallenge.model;
 
+
 import lombok.Data;
 
 @Data

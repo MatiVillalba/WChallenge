@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wolox.wchallenge.controllers.PhotosController;
@@ -21,6 +22,12 @@ public class PhotosControllerImpl implements PhotosController {
 	public ResponseEntity<List<Photo>> getAllPhotos() {
 		
 		return new ResponseEntity<> (wchallengeService.getAllPhotos(), HttpStatus.OK);
+	}
+
+	@Override
+	public ResponseEntity<List<Photo>> getPhotosByUser(@PathVariable long userId) {
+	
+		return new ResponseEntity<> (wchallengeService.getPhotosByUser(userId), HttpStatus.OK);
 	}
 
 	

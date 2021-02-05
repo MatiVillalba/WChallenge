@@ -40,6 +40,14 @@ public class WChallengeServiceImpl implements WChallengeService {
 		
 		return Arrays.asList(photos);
 	}
+	
+	@Override
+	public List<Photo> getPhotosByUser(long userId) {
+		
+		Photo[] photos = restTemplate.getForObject(host+PHOTOS+"?"+USER_ID+"="+userId, Photo[].class);
+		
+		return Arrays.asList(photos);
+	}
 
 	@Override
 	public List<Album> getAllAlbums() {
@@ -57,5 +65,4 @@ public class WChallengeServiceImpl implements WChallengeService {
 		return Arrays.asList(albums);
 	}
 
-	
 }
