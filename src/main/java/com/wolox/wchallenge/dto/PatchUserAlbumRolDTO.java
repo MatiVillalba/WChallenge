@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class PatchUserAlbumRolDTO {
 	
-	private long userId;
+	private Long userId;
 	
 	private Boolean role;
 
