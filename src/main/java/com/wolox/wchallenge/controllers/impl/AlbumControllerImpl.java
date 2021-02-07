@@ -25,7 +25,7 @@ public class AlbumControllerImpl implements AlbumController {
 	}
 
 	@Override
-	public ResponseEntity<List<Album>> getAlbumByUser(@PathVariable("userId") long userId) {
+	public ResponseEntity<List<Album>> getAlbumByUser(@PathVariable("userId") Long userId) {
 		
 		return new ResponseEntity<>(wchallengeService.getAlbumByUser(userId), HttpStatus.OK);
 	}

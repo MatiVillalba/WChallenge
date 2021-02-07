@@ -12,11 +12,9 @@ public class AlbumTest {
 	public void testGettersAndSetters() {
 		
 		Album album = new Album();
-		album.setId(1L);
 		album.setTitle("");
 		album.setUserId(1L);
 		
-		assertNotNull(album.getId());
 		assertNotNull(album.getTitle());
 		assertNotNull(album.getUserId());
 	
@@ -27,7 +25,6 @@ public class AlbumTest {
 	public void testHashCodeWithValues() {
 		
 		Album album = new Album();
-		album.setId(1L);
 		album.setTitle("");
 		album.setUserId(1L);
 
@@ -38,7 +35,6 @@ public class AlbumTest {
 	public void toStringTest() {
 		
 		Album album = new Album();
-		album.setId(1L);
 		album.setTitle("");
 		album.setUserId(1L);
 		
@@ -71,12 +67,10 @@ public class AlbumTest {
 	public void equalsTestShouldReturnTrueWhenSameObject() {
 		
 		Album album = new Album();
-		album.setId(1L);
 		album.setTitle("");
 		album.setUserId(1L);
 		
 		Album albumTest = new Album();
-		albumTest.setId(1L);
 		albumTest.setTitle("");
 		albumTest.setUserId(1L);
 		

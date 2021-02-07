@@ -18,6 +18,6 @@ public interface PhotosController {
 	public ResponseEntity<List<Photo>> getAllPhotos();
 	
 	@GetMapping("/{userId}")
-	public ResponseEntity<List<Photo>> getPhotosByUser(@PathVariable long userId);
+	public ResponseEntity<List<Photo>> getPhotosByUser(@PathVariable Long userId);
 
 }

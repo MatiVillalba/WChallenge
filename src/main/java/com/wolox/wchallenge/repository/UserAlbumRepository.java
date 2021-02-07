@@ -11,9 +11,9 @@ import com.wolox.wchallenge.model.UserAlbum;
 @Repository
 public interface UserAlbumRepository extends JpaRepository<UserAlbum, Long> {
 	
-	public List<UserAlbum> findAllByAlbumId(long albumId);
+	public List<UserAlbum> findAllByAlbumId(Long albumId);
 	
 	@Query("Select userId from UserAlbum where albumId = ?1 and role = ?2")
-	public List<Long> findAllByAlbumIdAndRole(long albumId, Boolean role);
+	public List<Long> findAllByAlbumIdAndRole(Long albumId, Boolean role);
 
 }

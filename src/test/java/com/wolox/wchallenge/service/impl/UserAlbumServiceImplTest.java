@@ -95,10 +95,9 @@ public class UserAlbumServiceImplTest {
 		
 		User user = new User();
 		user.setAddress(new Address());
-		user.setId(1L);
 		user.setName("");
 		
-		when(userAlbumRepository.findAllByAlbumIdAndRole(1, true)).thenReturn(userId);
+		when(userAlbumRepository.findAllByAlbumIdAndRole(1L, true)).thenReturn(userId);
 		
 		when(wchallengeService.getUserById(1L)).thenReturn(user);
 		

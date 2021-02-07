@@ -27,13 +27,13 @@ public class UserAlbumControllerImpl implements UserAlbumController {
 	}
 
 	@Override
-	public ResponseEntity<List<UserAlbum>> patchUserAlbumRole(long albumId, PatchUserAlbumRolDTO patchUserAlbumRolDTO) {
+	public ResponseEntity<List<UserAlbum>> patchUserAlbumRole(Long albumId, PatchUserAlbumRolDTO patchUserAlbumRolDTO) {
 		
 		return new ResponseEntity<> (userAlbumService.patchUserAlbumRole(albumId, patchUserAlbumRolDTO), HttpStatus.OK);
 	}
 
 	@Override
-	public ResponseEntity<List<User>> getAllUsersByAlbumAndRole(long albumId, Boolean role) {
+	public ResponseEntity<List<User>> getAllUsersByAlbumAndRole(Long albumId, Boolean role) {
 	
 		return new ResponseEntity<> (userAlbumService.getAllUsersByAlbumAndRole(albumId, role), HttpStatus.OK);
 	}

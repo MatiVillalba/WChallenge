@@ -14,13 +14,11 @@ public class CommentTest {
 		Comment comment = new Comment();
 		comment.setBody("");
 		comment.setEmail("");
-		comment.setId(1L);
 		comment.setName("");
 		comment.setPostId(1L);
 		
 		assertNotNull(comment.getBody());
 		assertNotNull(comment.getEmail());
-		assertNotNull(comment.getId());
 		assertNotNull(comment.getName());
 		assertNotNull(comment.getPostId());
 	
@@ -33,7 +31,6 @@ public class CommentTest {
 		Comment comment = new Comment();
 		comment.setBody("");
 		comment.setEmail("");
-		comment.setId(1L);
 		comment.setName("");
 		comment.setPostId(1L);
 
@@ -46,7 +43,6 @@ public class CommentTest {
 		Comment comment = new Comment();
 		comment.setBody("");
 		comment.setEmail("");
-		comment.setId(1L);
 		comment.setName("");
 		comment.setPostId(1L);
 		
@@ -81,14 +77,12 @@ public class CommentTest {
 		Comment comment = new Comment();
 		comment.setBody("");
 		comment.setEmail("");
-		comment.setId(1L);
 		comment.setName("");
 		comment.setPostId(1L);
 		
 		Comment commentTest = new Comment();
 		commentTest.setBody("");
 		commentTest.setEmail("");
-		commentTest.setId(1L);
 		commentTest.setName("");
 		commentTest.setPostId(1L);
 		

@@ -25,7 +25,7 @@ public class PhotosControllerImpl implements PhotosController {
 	}
 
 	@Override
-	public ResponseEntity<List<Photo>> getPhotosByUser(@PathVariable long userId) {
+	public ResponseEntity<List<Photo>> getPhotosByUser(@PathVariable Long userId) {
 	
 		return new ResponseEntity<> (wchallengeService.getPhotosByUser(userId), HttpStatus.OK);
 	}

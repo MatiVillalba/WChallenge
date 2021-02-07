@@ -14,12 +14,10 @@ public class UserAlbumTest {
 		UserAlbum userAlbum = new UserAlbum();
 		userAlbum.setAlbumId(1L);
 		userAlbum.setRole(true);
-		userAlbum.setUserAlbumId(1L);
 		userAlbum.setUserId(1L);
 		
 		assertNotNull(userAlbum.getAlbumId());
 		assertNotNull(userAlbum.getRole());
-		assertNotNull(userAlbum.getUserAlbumId());
 		assertNotNull(userAlbum.getUserId());
 	
 		
@@ -31,7 +29,6 @@ public class UserAlbumTest {
 		UserAlbum userAlbum = new UserAlbum();
 		userAlbum.setAlbumId(1L);
 		userAlbum.setRole(true);
-		userAlbum.setUserAlbumId(1L);
 		userAlbum.setUserId(1L);
 
 		assertNotNull(userAlbum.hashCode());
@@ -43,7 +40,6 @@ public class UserAlbumTest {
 		UserAlbum userAlbum = new UserAlbum();
 		userAlbum.setAlbumId(1L);
 		userAlbum.setRole(true);
-		userAlbum.setUserAlbumId(1L);
 		userAlbum.setUserId(1L);
 		
 		assertNotNull(userAlbum.toString());
@@ -77,13 +73,11 @@ public class UserAlbumTest {
 		UserAlbum userAlbum = new UserAlbum();
 		userAlbum.setAlbumId(1L);
 		userAlbum.setRole(true);
-		userAlbum.setUserAlbumId(1L);
 		userAlbum.setUserId(1L);
 		
 		UserAlbum userAlbumTest = new UserAlbum();
 		userAlbumTest.setAlbumId(1L);
 		userAlbumTest.setRole(true);
-		userAlbumTest.setUserAlbumId(1L);
 		userAlbumTest.setUserId(1L);
 		
 		

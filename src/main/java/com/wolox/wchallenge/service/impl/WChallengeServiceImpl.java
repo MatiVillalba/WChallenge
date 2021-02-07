@@ -3,6 +3,7 @@ package com.wolox.wchallenge.service.impl;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -20,14 +21,16 @@ public class WChallengeServiceImpl implements WChallengeService {
 	public static final String PHOTOS = "/photos";
 	public static final String ALBUMS = "/albums";
 	public static final String COMMENTS = "/comments";
-	public static final String NAME = "name";
 	public static final String USER_ID = "userId";
-	public static final String ID = "id";
+	public static final String FILTER_USER_ID = "?userId=%s";
+	public static final String FILTER_NAME = "?name=%s";
+	public static final String FILTER_ID = "?id=%s";
 	
 	@Value("${JsonPlaceHolder.host}")
 	private String host;
 	
-	RestTemplate restTemplate = new RestTemplate();
+	@Autowired
+	RestTemplate restTemplate;
 	
 	@Override
 	public List<User> getAllUsers() {
@@ -38,9 +41,11 @@ public class WChallengeServiceImpl implements WChallengeService {
 	}
 	
 	@Override
-	public User getUserById(long userId) {
+	public User getUserById(Long userId) {
 		
-		User[] userData = restTemplate.getForObject(host+USERS+"?"+ID+"="+userId, User[].class);
+		String filter = String.format(FILTER_ID, userId);
+		
+		User[] userData = restTemplate.getForObject(host+USERS+filter, User[].class);
 		
 		return Arrays.asList(userData).get(0);
 	}
@@ -54,9 +59,11 @@ public class WChallengeServiceImpl implements WChallengeService {
 	}
 	
 	@Override
-	public List<Photo> getPhotosByUser(long userId) {
+	public List<Photo> getPhotosByUser(Long userId) {
 		
-		Photo[] photos = restTemplate.getForObject(host+PHOTOS+"?"+USER_ID+"="+userId, Photo[].class);
+		String filter = String.format(FILTER_USER_ID, userId);
+		
+		Photo[] photos = restTemplate.getForObject(host+PHOTOS+filter, Photo[].class);
 		
 		return Arrays.asList(photos);
 	}
@@ -70,9 +77,11 @@ public class WChallengeServiceImpl implements WChallengeService {
 	}
 
 	@Override
-	public List<Album> getAlbumByUser(long userId) {
+	public List<Album> getAlbumByUser(Long userId) {
+		
+		String filter = String.format(FILTER_USER_ID, userId);
 
-		Album[] albums = restTemplate.getForObject(host+ALBUMS+"?"+USER_ID+"="+userId, Album[].class);
+		Album[] albums = restTemplate.getForObject(host+ALBUMS+filter, Album[].class);
 		
 		return Arrays.asList(albums);
 	}
@@ -80,7 +89,19 @@ public class WChallengeServiceImpl implements WChallengeService {
 	@Override
 	public List<Comment> getCommentsByName(String name) {
 		
-		Comment[] comments = restTemplate.getForObject(host+COMMENTS+"?"+NAME+"="+name, Comment[].class);
+		String filter = String.format(FILTER_NAME, name);
+		
+		Comment[] comments = restTemplate.getForObject(host+COMMENTS+filter, Comment[].class);
+		
+		return Arrays.asList(comments);
+	}
+
+	@Override
+	public List<Comment> getCommentsByUser(Long userId) {
+
+		String filter = String.format(FILTER_USER_ID, userId);
+		
+		Comment[] comments = restTemplate.getForObject(host+COMMENTS+filter, Comment[].class);
 		
 		return Arrays.asList(comments);
 	}

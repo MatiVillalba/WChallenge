@@ -25,11 +25,11 @@ public interface UserAlbumController {
 	public ResponseEntity<UserAlbum> postUserAlbum(@RequestBody UserAlbumDTO userAlbumDto);
 
 	@PatchMapping("/albums/{albumId}")
-	public ResponseEntity<List<UserAlbum>> patchUserAlbumRole(@PathVariable("albumId") long albumId, 
+	public ResponseEntity<List<UserAlbum>> patchUserAlbumRole(@PathVariable("albumId") Long albumId, 
 			@RequestBody PatchUserAlbumRolDTO patchUserAlbumRolDTO);
 	
 	@GetMapping("/albums/{albumId}")
-	public ResponseEntity<List<User>> getAllUsersByAlbumAndRole(@PathVariable("albumId") long albumId,
+	public ResponseEntity<List<User>> getAllUsersByAlbumAndRole(@PathVariable("albumId") Long albumId,
 			@RequestParam(name = "role", required = false) Boolean role);
 	
 }

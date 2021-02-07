@@ -14,16 +14,18 @@ public interface WChallengeService {
 	
 	public List<User> getAllUsers();
 	
-	public User getUserById(long userId);
+	public User getUserById(Long userId);
 	
 	public List<Photo> getAllPhotos();
 	
-	public List<Photo> getPhotosByUser(long userId);
+	public List<Photo> getPhotosByUser(Long userId);
 	
 	public List<Album> getAllAlbums();
 	
-	public List<Album> getAlbumByUser(long userId);
+	public List<Album> getAlbumByUser(Long userId);
 	
 	public List<Comment> getCommentsByName(String name);
+	
+	public List<Comment> getCommentsByUser(Long userId);
 
 }

@@ -13,13 +13,11 @@ public class PhotoTest {
 		
 		Photo photo = new Photo();
 		photo.setAlbumId(1L);
-		photo.setId(1L);
 		photo.setThumbnailUrl("");
 		photo.setTitle("");
 		photo.setUrl("");
 		
 		assertNotNull(photo.getAlbumId());
-		assertNotNull(photo.getId());
 		assertNotNull(photo.getThumbnailUrl());
 		assertNotNull(photo.getTitle());
 		assertNotNull(photo.getUrl());
@@ -32,7 +30,6 @@ public class PhotoTest {
 		
 		Photo photo = new Photo();
 		photo.setAlbumId(1L);
-		photo.setId(1L);
 		photo.setThumbnailUrl("");
 		photo.setTitle("");
 		photo.setUrl("");
@@ -45,7 +42,6 @@ public class PhotoTest {
 		
 		Photo photo = new Photo();
 		photo.setAlbumId(1L);
-		photo.setId(1L);
 		photo.setThumbnailUrl("");
 		photo.setTitle("");
 		photo.setUrl("");
@@ -80,14 +76,12 @@ public class PhotoTest {
 		
 		Photo photo = new Photo();
 		photo.setAlbumId(1L);
-		photo.setId(1L);
 		photo.setThumbnailUrl("");
 		photo.setTitle("");
 		photo.setUrl("");
 		
 		Photo photoTest = new Photo();
 		photoTest.setAlbumId(1L);
-		photoTest.setId(1L);
 		photoTest.setThumbnailUrl("");
 		photoTest.setTitle("");
 		photoTest.setUrl("");

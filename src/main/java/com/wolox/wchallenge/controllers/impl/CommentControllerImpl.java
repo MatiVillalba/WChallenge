@@ -23,4 +23,12 @@ public class CommentControllerImpl implements CommentController{
 		return new ResponseEntity<> (wchallengeService.getCommentsByName(name), HttpStatus.OK);
 	}
 
+	@Override
+	public ResponseEntity<List<Comment>> getCommentsByUser(Long userId) {
+	
+		return new ResponseEntity<> (wchallengeService.getCommentsByUser(userId), HttpStatus.OK);
+	}
+	
+	
+
 }

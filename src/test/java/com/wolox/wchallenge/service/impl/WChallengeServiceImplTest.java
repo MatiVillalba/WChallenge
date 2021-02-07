@@ -48,7 +48,6 @@ public class WChallengeServiceImplTest {
 		user.setAddress(new Address());
 		user.setCompany(new Company());
 		user.setEmail("");
-		user.setId(1L);
 		user.setName("Pepe");
 		user.setPhone("123");
 		user.setUsername("Gonzalez");
@@ -67,8 +66,8 @@ public class WChallengeServiceImplTest {
 		User userTest = new User();
 		userTest.setAddress(new Address());
 		userTest.setCompany(new Company());
-		userTest.setEmail("");
 		userTest.setId(1L);
+		userTest.setEmail("");
 		userTest.setName("Pepe");
 		userTest.setPhone("123");
 		userTest.setUsername("Gonzalez");
@@ -86,7 +85,6 @@ public class WChallengeServiceImplTest {
 		
 		Photo photo = new Photo();
 		photo.setAlbumId(1L);
-		photo.setId(1L);
 		photo.setThumbnailUrl("");
 		photo.setTitle("");
 		photo.setUrl("");
@@ -103,7 +101,6 @@ public class WChallengeServiceImplTest {
 		
 		Photo photo = new Photo();
 		photo.setAlbumId(1L);
-		photo.setId(1L);
 		photo.setThumbnailUrl("");
 		photo.setTitle("");
 		photo.setUrl("");
@@ -119,7 +116,6 @@ public class WChallengeServiceImplTest {
 	public void testGetAllAlbums() {
 		
 		Album album = new Album();
-		album.setId(1L);
 		album.setTitle("");
 		album.setUserId(1L);
 		Album[] albums = {album};
@@ -134,7 +130,6 @@ public class WChallengeServiceImplTest {
 	public void testGetAlbumByUser() {
 		
 		Album album = new Album();
-		album.setId(1L);
 		album.setTitle("");
 		album.setUserId(1L);
 		Album[] albums = {album};
@@ -151,12 +146,27 @@ public class WChallengeServiceImplTest {
 		Comment comment = new Comment();
 		comment.setBody("");
 		comment.setEmail("");
-		comment.setName("");
-		comment.setId(1L);
+		comment.setName("prueba texto");
 		comment.setPostId(1L);
 		Comment[] comments = {comment};
 		when(restTemplate.getForObject(host+COMMENTS+"?"+NAME+"="+comment.getName(), Comment[].class)).thenReturn(comments);
 		List<Comment> commentTest = wchallengeServiceImpl.getCommentsByName(comment.getName());
+		
+		assertNotNull(commentTest);
+		
+	}
+	
+	@Test
+	public void testGetCommentsByUser() {
+		
+		Comment comment = new Comment();
+		comment.setBody("");
+		comment.setEmail("");
+		comment.setName("prueba texto");
+		comment.setPostId(1L);
+		Comment[] comments = {comment};
+		when(restTemplate.getForObject(host+COMMENTS+"?"+USER_ID+"="+1, Comment[].class)).thenReturn(comments);
+		List<Comment> commentTest = wchallengeServiceImpl.getCommentsByUser(1L);
 		
 		assertNotNull(commentTest);
 		

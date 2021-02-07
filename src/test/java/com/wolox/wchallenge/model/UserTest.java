@@ -15,11 +15,11 @@ public class UserTest {
 		user.setAddress(new Address());
 		user.setCompany(new Company());
 		user.setEmail("");
-		user.setId(1L);
 		user.setName("");
 		user.setPhone("");
 		user.setUsername("");
 		user.setWebsite("");
+		user.setId(1L);
 		
 		assertNotNull(user.getAddress());
 		assertNotNull(user.getCompany());
@@ -40,7 +40,6 @@ public class UserTest {
 		user.setAddress(new Address());
 		user.setCompany(new Company());
 		user.setEmail("");
-		user.setId(1L);
 		user.setName("");
 		user.setPhone("");
 		user.setUsername("");
@@ -56,7 +55,6 @@ public class UserTest {
 		user.setAddress(new Address());
 		user.setCompany(new Company());
 		user.setEmail("");
-		user.setId(1L);
 		user.setName("");
 		user.setPhone("");
 		user.setUsername("");
@@ -94,7 +92,6 @@ public class UserTest {
 		user.setAddress(new Address());
 		user.setCompany(new Company());
 		user.setEmail("");
-		user.setId(1L);
 		user.setName("");
 		user.setPhone("");
 		user.setUsername("");
@@ -104,7 +101,6 @@ public class UserTest {
 		userTest.setAddress(new Address());
 		userTest.setCompany(new Company());
 		userTest.setEmail("");
-		userTest.setId(1L);
 		userTest.setName("");
 		userTest.setPhone("");
 		userTest.setUsername("");

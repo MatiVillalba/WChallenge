@@ -26,16 +26,7 @@ public class UserAlbumServiceImpl implements UserAlbumService{
 	@Override
 	public UserAlbum createUserAlbum(UserAlbumDTO userAlbumDTO) {
 		
-		UserAlbum userAlbum = new UserAlbum();
-		long userId = userAlbumDTO.getUserId();
-		long albumId = userAlbumDTO.getAlbumId();
-		boolean role = userAlbumDTO.getRole();
-		
-		userAlbum.setUserId(userId);
-		userAlbum.setAlbumId(albumId);
-		userAlbum.setRole(role);
-		
-		return userAlbumRepository.save(userAlbum);
+		return userAlbumRepository.save(userAlbumDTO.toModel());
 	}
 
 	@Override

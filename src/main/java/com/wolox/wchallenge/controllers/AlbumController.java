@@ -18,6 +18,6 @@ public interface AlbumController {
 	public ResponseEntity<List<Album>> getAllAlbums();
 	
 	@GetMapping("/{userId}")
-	public ResponseEntity<List<Album>> getAlbumByUser(@PathVariable("userId") long userId);
+	public ResponseEntity<List<Album>> getAlbumByUser(@PathVariable("userId") Long userId);
 
 }
