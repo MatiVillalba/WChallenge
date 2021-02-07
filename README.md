@@ -1,7 +1,7 @@
 # Wolox - WChallenge
 
 
-#####This api allows to perform the following actions:
+This api allows to perform the following actions:
 
 •	Get all users
 
@@ -24,6 +24,6 @@
 •	Get Comments by user
 
 
-###•	For run the api
+•	For run the api
 
 Go to this url http://localhost:8080/swagger-ui.html and invoke the different endpoints
