@@ -1,6 +1,7 @@
-Wolox - WChallenge
+# Wolox - WChallenge
 
-This api allows to perform the following actions:
+
+#####This api allows to perform the following actions:
 
 •	Get all users
 
@@ -14,7 +15,7 @@ This api allows to perform the following actions:
 
 •	Register an album shared with a user and their permissions
 
-•	Change a user's permissions for a specific album
+•	Change a users permissions for a specific album
 
 •	Get all the users who have a certain permission regarding a specific album
 
@@ -23,7 +24,6 @@ This api allows to perform the following actions:
 •	Get Comments by user
 
 
-•	For run the api
+###•	For run the api
 
 Go to this url http://localhost:8080/swagger-ui.html and invoke the different endpoints
-
